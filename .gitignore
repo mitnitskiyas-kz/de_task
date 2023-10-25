@@ -1,0 +1,21 @@
+*.class
+*.log
+*.pyc
+
+# idea
+/.idea
+/target
+#terraform/.terraform
+#terraform/*.hcl
+#terraform/*.tfplan
+#terraform/*.tfstate
+*.iml
+
+.venv/
+venv/
+venv_p/
+dist/
+*.egg-info/
+build/
+### Mac ###
+.DS_Store
