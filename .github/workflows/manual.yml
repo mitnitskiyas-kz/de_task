@@ -40,4 +40,4 @@ jobs:
         pip install -r requirements.txt
     - name: launch
       run: |
-        python main.py ./cfg/config.yaml ${{KAGGLE_KEY}}
+        python main.py ./cfg/config.yaml ${{KAGGLE_SECRET}}
