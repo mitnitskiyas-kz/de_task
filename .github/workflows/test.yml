@@ -26,5 +26,5 @@ jobs:
         pip install -r requirements.txt
     - name: Test with tox
       run: |
-        python -m pytest src
+        python -m pytest src --cov=de_task
         python -m flake8
