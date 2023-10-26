@@ -1,5 +1,7 @@
 """Module for used routine."""
 from datetime import datetime
+from pyspark.sql import DataFrame
+from pyspark.sql.functions import date_add, trunc, col, to_timestamp, when
 
 
 def get_all_months_within(date_from: str, date_to: str):
@@ -22,3 +24,12 @@ def get_all_months_within(date_from: str, date_to: str):
                             d_date_to.month + 1
                             if year == d_date_to.year else 13)]
     return month_list
+
+
+def align_to_weekends(input_dataframe: DataFrame,
+                      timestamp_column: str, new_column: str) -> DataFrame:
+    """Align dataframe timestamp_column to end-of-week new_column."""
+    return input_dataframe.withColumn(new_column, trunc(timestamp_column, 'week')). \
+        withColumn(new_column,
+                   when(to_timestamp(timestamp_column) == to_timestamp(new_column),
+                        col(new_column)).otherwise(date_add(new_column, 7)))
