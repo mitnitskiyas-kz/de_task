@@ -24,4 +24,6 @@ jobs:
         pip install -r requirements.txt
     - name: launch
       run: |
-        python -m main.py
+        pwd
+        ls -la
+        python main.py cfg/config.yaml ${{KAGGLE_SECRET}}
