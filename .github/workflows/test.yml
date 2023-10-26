@@ -27,8 +27,3 @@ jobs:
     - name: run tests
       run: |
         tox
-        #cwd
-        #ls -la 
-        #python -m pytest src
-        #python -m pytest src --cov=de_task
-        #python -m flake8
