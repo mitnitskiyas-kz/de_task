@@ -9,7 +9,7 @@ import tempfile
 class DETaskProcess:
     """Main class for the task."""
 
-    def __init__(self, config_file):
+    def __init__(self, config_file, key):
         """Initialize essential parameters from yaml file."""
         self.translations_filename = None
         self.sellers_filename = None
@@ -21,13 +21,14 @@ class DETaskProcess:
         self.customers_filename = None
         self.spark = None
         self.config_file = config_file
+        self.key = key
         print(f'Initializing process with file {self.config_file}')
         with open(self.config_file) as yaml_configuration:
             self.configuration = yaml.load(yaml_configuration, Loader=yaml.FullLoader)
 
         kaggle_integration = self.configuration.get('kaggle_integration')
         self.username = kaggle_integration.get('username')
-        self.key = kaggle_integration.get('key')
+        #self.key = kaggle_integration.get('key')
         self.dataset_name = kaggle_integration.get('dataset_name')
 
         data_aliases = self.configuration.get('data_aliases')
@@ -90,9 +91,10 @@ class DETaskProcess:
 if __name__ == '__main__':
     print(sys.argv)
     if len(sys.argv) == 1:
-        myDETaskProcess = DETaskProcess(os.path.join(os.getcwd(), 'cfg', 'config.yaml'))
+        myDETaskProcess = DETaskProcess(os.path.join(os.getcwd(), 'cfg', 'config.yaml'),
+                                        '53f4bee90070f4af669078622009e336')
     else:
-        myDETaskProcess = DETaskProcess(sys.argv[1])
+        myDETaskProcess = DETaskProcess(sys.argv[1], sys.argv[2])
     myDETaskProcess.kaggle_integration()
     myDETaskProcess.init_spark()
     myDETaskProcess.process()
