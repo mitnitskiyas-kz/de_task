@@ -28,7 +28,6 @@ class DETaskProcess:
 
         kaggle_integration = self.configuration.get('kaggle_integration')
         self.username = kaggle_integration.get('username')
-        #self.key = kaggle_integration.get('key')
         self.dataset_name = kaggle_integration.get('dataset_name')
 
         data_aliases = self.configuration.get('data_aliases')
