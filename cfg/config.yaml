@@ -1,6 +1,5 @@
 kaggle_integration:
   username: "alekseimitnitskiy"
-  key: "53f4bee90070f4af669078622009e336"
   dataset_name: "olistbr/brazilian-ecommerce"
 
 data_aliases:
