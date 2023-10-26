@@ -26,8 +26,9 @@ jobs:
         pip install -r requirements_dev.txt
     - name: run tests
       run: |
-        cwd
-        ls -la 
-        python -m pytest src
+        tox
+        #cwd
+        #ls -la 
+        #python -m pytest src
         #python -m pytest src --cov=de_task
         #python -m flake8
