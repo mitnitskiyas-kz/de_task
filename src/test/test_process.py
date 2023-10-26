@@ -1,7 +1,7 @@
 """Module tests all routines."""
 # import pytest
 # from src.test.spark_base import spark
-from src.main.python.calc_rouitine import get_all_months_within
+from de_task.calc_rouitine import get_all_months_within
 
 
 class TestMe:
