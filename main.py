@@ -118,14 +118,12 @@ class DETaskProcess:
 
 
 if __name__ == '__main__':
-    print(sys.argv)
-    if len(sys.argv) == 1:
-        myDETaskProcess = DETaskProcess(os.path.join(os.getcwd(), 'cfg', 'config.yaml'),
-                                        '53f4bee90070f4af669078622009e336')
+    if len(sys.argv) != 3:
+        print('Usage: python main.py path_to_config_file key_to_kaggle (username is in cfg file)')
     else:
         myDETaskProcess = DETaskProcess(sys.argv[1], sys.argv[2])
-    myDETaskProcess.kaggle_integration()
-    myDETaskProcess.init_spark()
-    myDETaskProcess.process()
-    myDETaskProcess.finish()
+        myDETaskProcess.kaggle_integration()
+        myDETaskProcess.init_spark()
+        myDETaskProcess.process()
+        myDETaskProcess.finish()
     exit(0)
