@@ -1,7 +1,7 @@
 """Module tests all routines."""
 import pytest
 from src.test.spark_base import spark
-from de_task.calc_rouitine import get_all_months_within, align_to_weekends
+from de_task.calc_routine import get_all_months_within, align_to_weekends
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col
 from pyspark.sql.types import StringType

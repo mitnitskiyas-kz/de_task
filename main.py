@@ -6,7 +6,7 @@ from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql.functions import count, sum, desc, col, expr
 import tempfile
 from de_task.structure import olist_order_items_dataset_schema
-from de_task.calc_rouitine import align_to_weekends
+from de_task.calc_routine import align_to_weekends
 
 
 class DETaskProcess:
