@@ -2,7 +2,7 @@
 
 
 from pyspark.sql.types import StructType, StructField, \
-    StringType, IntegerType, TimestampType, DoubleType, DateType
+    StringType, IntegerType, TimestampType, DoubleType
 
 olist_customers_dataset_schema = StructType([
     StructField('customer_id', StringType(), True),
