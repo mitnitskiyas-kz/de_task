@@ -1,0 +1,17 @@
+kaggle_integration:
+  username: "alekseimitnitskiy"
+  key: "53f4bee90070f4af669078622009e336"
+  dataset_name: "olistbr/brazilian-ecommerce"
+
+data_aliases:
+  customers: "olist_customers_dataset.csv"
+  geolocation: "olist_geolocation_dataset.csv"
+  orders: "olist_orders_dataset.csv"
+  order_items: "olist_order_items_dataset"
+  order_payments: "olist_order_payments_dataset.csv"
+  order_reviews: "olist_order_reviews_dataset.csv"
+  products: "olist_products_dataset.csv"
+  sellers: "olist_sellers_dataset.csv"
+  translations: "product_category_name_translation.csv"
+
+
